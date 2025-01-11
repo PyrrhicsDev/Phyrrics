@@ -1,4 +1,5 @@
 extends CharacterBody2D
+#test push
 var rng = RandomNumberGenerator.new()
 func _ready():
 	$enemySprite2D/AnimationPlayer.play('idleEnemy')
