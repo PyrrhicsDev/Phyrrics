@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2upj5qq3vtvo"]
+
+[ext_resource type="PackedScene" uid="uid://1cyytqxdp81f" path="res://enemy.tscn" id="1_rf1rg"]
+[ext_resource type="PackedScene" uid="uid://pupwo6lsbk6u" path="res://char.tscn" id="3_wnmh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30b1j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_30b1j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(15, 15)
+
+[node name="charNode2D" parent="." instance=ExtResource("3_wnmh6")]
+position = Vector2(25, 0)
+
+[node name="enemyNode2D" parent="." instance=ExtResource("1_rf1rg")]
+position = Vector2(-24, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="enemyNode2D" method="_on_timer_timeout"]
