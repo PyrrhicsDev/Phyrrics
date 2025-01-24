@@ -10,13 +10,20 @@ func setState(state):
 	if state == "idle":
 		Global.enemyDamage = Global.trueAttack
 	elif state == "shove":	
-		Global.enemyDamage = Global.trueAttack
-		Global.enemyHealth -= 0.2 * Global.attack
-		Global.enemyNewHealth = Global.enemyHealth
+		if Global.enemyHealth < 0:
+			Global.enemyHealth = 0
+		else:
+			Global.enemyDamage = Global.trueAttack
+			Global.enemyHealth -= 0.2 * Global.attack
+			Global.enemyNewHealth = Global.enemyHealth
+			Global.youShoveEnemy = true
 	elif state == "attack":	
-		Global.enemyDamage = Global.trueAttack
-		Global.enemyHealth -= Global.attack
-		Global.enemyNewHealth = Global.enemyHealth
+		if Global.enemyHealth <= 0:
+			Global.enemyHealth = 0
+		else:
+			Global.enemyDamage = Global.trueAttack
+			Global.enemyHealth -= Global.attack
+			Global.enemyNewHealth = Global.enemyHealth
 	elif state == "dodge":	
 		Global.enemyDamage = 0
 	elif state == "block":	
@@ -27,8 +34,6 @@ func setState(state):
 		$charSprite2D.position = Vector2(10, 0)
 		$charSprite2D.position = Vector2(0, 0)
 		
-	if Global.enemyHealth < 0:
-		Global.enemyHealth = 0
 	await get_tree().create_timer(0.5).timeout
 	$charSprite2D/AnimationPlayer.play('idle')
 	Global.enemyDamage = Global.trueAttack
@@ -39,7 +44,7 @@ func setState(state):
 func _ready():
 	$charSprite2D/AnimationPlayer.play('idle')
 
-func _process(delta):
+func _process(_delta):
 	for i in inputsList:
 		if Input.is_action_just_pressed(i) and timerCooldown:
 			timerCooldown = false #Cooldown until timerCooldown == true
@@ -51,4 +56,4 @@ func _on_timer_timeout() -> void:
 
 func _on_parry_timer_timeout() -> void:
 	Global.parryTimeOver = true
-	print("parryTimeOver")
+	#print("parryTimeOver") #Debugging parry time

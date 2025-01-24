@@ -190,6 +190,7 @@ _data = {
 script = ExtResource("1_0suht")
 
 [node name="enemySprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.199732, 0.199732, 0.199732, 1)
 texture = ExtResource("1_kklg7")
 hframes = 8
 vframes = 4

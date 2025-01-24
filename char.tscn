@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://char.gd" id="1_exw8h"]
 
 [sub_resource type="Animation" id="Animation_wpue3"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,7 +14,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [17]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_yeyv8"]
@@ -194,7 +193,7 @@ script = ExtResource("1_exw8h")
 texture = ExtResource("1_0f2oy")
 hframes = 8
 vframes = 4
-frame = 17
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="charSprite2D"]
 libraries = {
@@ -202,7 +201,7 @@ libraries = {
 }
 
 [node name="charTimer" type="Timer" parent="charSprite2D"]
-wait_time = 0.8
+wait_time = 0.6
 one_shot = true
 
 [node name="parryTimer" type="Timer" parent="charSprite2D"]
