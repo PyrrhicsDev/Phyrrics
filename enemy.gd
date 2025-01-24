@@ -18,14 +18,10 @@ func setState(state):
 		$enemySprite2D/AnimationPlayer.play('shoveEnemy')
 		Global.attack = Global.trueAttack
 		Global.health -= 0.2 * Global.enemyDamage
-		if Global.health < 0:
-			Global.health = 0
 	elif state == States.ATTACK:	
 		Global.attack = Global.trueAttack
 		$enemySprite2D/AnimationPlayer.play('attackEnemy')
 		Global.health -= Global.enemyDamage
-		if Global.health < 0:
-			Global.health = 0
 	elif state == States.DODGE:	
 		$enemySprite2D/AnimationPlayer.play('dodgeEnemy')
 		Global.attack = 0
@@ -39,6 +35,9 @@ func setState(state):
 		$enemySprite2D.position = Vector2(10, 0)
 		$enemySprite2D.position = Vector2(0, 0)
 		$enemySprite2D.modulate = Color(255, 0, 0, 50)
+		
+	if Global.health < 0:
+		Global.health = 0
 		
 func combo1():
 	pass
