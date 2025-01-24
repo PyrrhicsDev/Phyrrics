@@ -10,6 +10,7 @@ var critMultiplier = 2
 
 var blocked = false
 var canAttack = true
+var parryTimeOver = false # Allows for the first initial parry with no cooldown
 
 var enemyDamage = 10
 var enemyHealth = 100
