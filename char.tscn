@@ -17,81 +17,6 @@ tracks/0/keys = {
 "values": [8]
 }
 
-[sub_resource type="Animation" id="Animation_yeyv8"]
-resource_name = "attackEnemy"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [9, 13]
-}
-
-[sub_resource type="Animation" id="Animation_h1gtx"]
-resource_name = "blockEnemy"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [10, 14]
-}
-
-[sub_resource type="Animation" id="Animation_xsb4u"]
-resource_name = "dodgeEnemy"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 12]
-}
-
-[sub_resource type="Animation" id="Animation_hgp63"]
-resource_name = "idleEnemy"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 12]
-}
-
-[sub_resource type="Animation" id="Animation_6mjc0"]
-resource_name = "shoveEnemy"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [11, 15]
-}
-
 [sub_resource type="Animation" id="Animation_6b52e"]
 resource_name = "attack"
 length = 0.5
@@ -109,6 +34,21 @@ tracks/0/keys = {
 "values": [17]
 }
 
+[sub_resource type="Animation" id="Animation_yeyv8"]
+resource_name = "attackEnemy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 13]
+}
+
 [sub_resource type="Animation" id="Animation_8l5f4"]
 resource_name = "block"
 tracks/0/type = "value"
@@ -122,6 +62,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_h1gtx"]
+resource_name = "blockEnemy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [10, 14]
 }
 
 [sub_resource type="Animation" id="Animation_evgng"]
@@ -139,6 +94,21 @@ tracks/0/keys = {
 "values": [20]
 }
 
+[sub_resource type="Animation" id="Animation_xsb4u"]
+resource_name = "dodgeEnemy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 12]
+}
+
 [sub_resource type="Animation" id="Animation_wxfgy"]
 resource_name = "idle"
 tracks/0/type = "value"
@@ -154,6 +124,21 @@ tracks/0/keys = {
 "values": [16]
 }
 
+[sub_resource type="Animation" id="Animation_hgp63"]
+resource_name = "idleEnemy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 12]
+}
+
 [sub_resource type="Animation" id="Animation_ysj46"]
 resource_name = "shove"
 tracks/0/type = "value"
@@ -167,6 +152,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [19]
+}
+
+[sub_resource type="Animation" id="Animation_6mjc0"]
+resource_name = "shoveEnemy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [11, 15]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t7o06"]
@@ -204,13 +204,9 @@ libraries = {
 wait_time = 0.6
 one_shot = true
 
-[node name="parryTimer" type="Timer" parent="charSprite2D"]
-wait_time = 0.8
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q1qfr")
 
 [connection signal="timeout" from="charSprite2D/charTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="charSprite2D/parryTimer" to="." method="_on_parry_timer_timeout"]
