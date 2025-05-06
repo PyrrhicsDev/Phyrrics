@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:	
+	print(get_tree())
 	pass
 	
 func _process(_delta):
@@ -18,6 +19,24 @@ func _process(_delta):
 	$MenUI/charContainer/charAttackSpeed.text = "AtkSpd: %.2f" % Global.attackSpeed
 	$MenUI/enemyContainer/enemyAttackSpeed.text = "AtkSpd: %.2f" % Global.enemyAttackSpeed
 
+	$MenUI/charContainer/charStun.text =  str(Global.blocked)
+	$MenUI/enemyContainer/enemyStun.text = str(Global.enemyBlocksYou)
+	
+	$MenUI/charContainer/charHPBar.min_value = 0
+	$MenUI/charContainer/charHPBar.max_value = Global.maxHealth
+	$MenUI/charContainer/charHPBar.value = Global.health
+	
+	$MenUI/enemyContainer/enemyHPBar.min_value = 0
+	$MenUI/enemyContainer/enemyHPBar.max_value = Global.enemyMaxHealth
+	$MenUI/enemyContainer/enemyHPBar.value = Global.enemyHealth
+
+	$MenUI/charContainer/charStunBar.min_value = 0
+	$MenUI/charContainer/charStunBar.max_value = Global.charMaxStunHP
+	$MenUI/charContainer/charStunBar.value = Global.charStunHP
+	
+	$MenUI/enemyContainer/enemyStunBar.min_value = 0
+	$MenUI/enemyContainer/enemyStunBar.max_value = Global.enemyMaxStunHP
+	$MenUI/enemyContainer/enemyStunBar.value = Global.enemyStunHP
 #func _input(event):
 	#if event is InputEventMouseMotion:
 		#print(event.position)

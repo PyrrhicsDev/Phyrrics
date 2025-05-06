@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2upj5qq3vtvo"]
+[gd_scene load_steps=6 format=3 uid="uid://d2upj5qq3vtvo"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_ne6bp"]
 [ext_resource type="PackedScene" uid="uid://1cyytqxdp81f" path="res://enemy.tscn" id="1_rf1rg"]
+[ext_resource type="Texture2D" uid="uid://spful5oxuh2r" path="res://icon.svg" id="2_3afc3"]
 [ext_resource type="PackedScene" uid="uid://pupwo6lsbk6u" path="res://char.tscn" id="3_wnmh6"]
+[ext_resource type="AudioStream" uid="uid://ctqhntb8use4f" path="res://アンダーグラウンドIchika VS ササノマリイ (from Dios).mp3" id="5_hk734"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ne6bp")
@@ -13,11 +15,32 @@ anchors_preset = 0
 
 [node name="charContainer" type="VBoxContainer" parent="MenUI"]
 layout_mode = 1
+offset_top = -222.0
 offset_right = 570.0
-offset_bottom = 320.0
+offset_bottom = 222.0
 alignment = 1
 
+[node name="charHPBar" type="TextureProgressBar" parent="MenUI/charContainer"]
+layout_mode = 2
+fill_mode = 1
+texture_under = ExtResource("2_3afc3")
+texture_progress = ExtResource("2_3afc3")
+tint_under = Color(0, 0, 0, 1)
+
+[node name="charStunBar" type="TextureProgressBar" parent="MenUI/charContainer"]
+layout_mode = 2
+fill_mode = 1
+texture_under = ExtResource("2_3afc3")
+texture_progress = ExtResource("2_3afc3")
+tint_under = Color(0, 0, 0, 1)
+
 [node name="charHealth" type="Label" parent="MenUI/charContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="charStun" type="Label" parent="MenUI/charContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
@@ -47,11 +70,30 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -570.0
-offset_bottom = 320.0
+offset_top = -222.0
+offset_bottom = 222.0
 grow_horizontal = 0
 alignment = 1
 
+[node name="enemyHPBar" type="TextureProgressBar" parent="MenUI/enemyContainer"]
+layout_mode = 2
+texture_under = ExtResource("2_3afc3")
+texture_progress = ExtResource("2_3afc3")
+tint_under = Color(0, 0, 0, 1)
+
+[node name="enemyStunBar" type="TextureProgressBar" parent="MenUI/enemyContainer"]
+layout_mode = 2
+texture_under = ExtResource("2_3afc3")
+texture_progress = ExtResource("2_3afc3")
+tint_under = Color(0, 0, 0, 1)
+
 [node name="enemyHP" type="Label" parent="MenUI/enemyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="enemyStun" type="Label" parent="MenUI/enemyContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
@@ -87,5 +129,10 @@ scale = Vector2(10, 10)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hk734")
+volume_db = -15.0
+parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="enemyNode2D" method="_on_timer_timeout"]

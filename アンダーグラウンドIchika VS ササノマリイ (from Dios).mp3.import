@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctqhntb8use4f"
+path="res://.godot/imported/アンダーグラウンドIchika VS ササノマリイ (from Dios).mp3-3b99cadb375fb6be75f3947ea3f75638.mp3str"
+
+[deps]
+
+source_file="res://アンダーグラウンドIchika VS ササノマリイ (from Dios).mp3"
+dest_files=["res://.godot/imported/アンダーグラウンドIchika VS ササノマリイ (from Dios).mp3-3b99cadb375fb6be75f3947ea3f75638.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
