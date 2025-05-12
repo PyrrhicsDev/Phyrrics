@@ -6,7 +6,7 @@ func _ready() -> void:
 	
 func _process(_delta):
 	#$MenUI.size = get_viewport().get_visible_rect().size
-	
+	#hi
 	$MenUI/charContainer/charHealth.text = "HP: %d" % Global.health
 	$MenUI/enemyContainer/enemyHP.text = "HP: %d" % Global.enemyHealth
 
