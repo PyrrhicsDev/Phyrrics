@@ -9,6 +9,14 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ne6bp")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -570.0
+offset_top = 88.0
+offset_right = -530.0
+offset_bottom = 128.0
+
+[node name="Node" type="Node" parent="RichTextLabel"]
+
 [node name="MenUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0

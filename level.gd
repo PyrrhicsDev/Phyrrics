@@ -37,6 +37,16 @@ func _process(_delta):
 	$MenUI/enemyContainer/enemyStunBar.min_value = 0
 	$MenUI/enemyContainer/enemyStunBar.max_value = Global.enemyMaxStunHP
 	$MenUI/enemyContainer/enemyStunBar.value = Global.enemyStunHP
+
+func animate_fade():
+	# Fade in fast (0 → 1 in 0.1s)
+	$RichTextLabel/Node.tween_property(self, "modulate:a", 1.0, 0.1)
+	# Wait 0.1s, then fade out slowly (1 → 0 in 0.6s)
+	$RichTextLabel/Node.tween_interval(0.1)
+	$RichTextLabel/Node.tween_property(self, "modulate:a", 0.0, 0.6)
+	# Queue free when done
+	$RichTextLabel/Node.tween_callback(self, "queue_free")
+
 #func _input(event):
 	#if event is InputEventMouseMotion:
 		#print(event.position)

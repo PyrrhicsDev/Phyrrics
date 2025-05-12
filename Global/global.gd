@@ -32,5 +32,5 @@ var enemyOldHealth = 100
 var enemyNewHealth = 100
 var enemyAttackSpeed = 1
 var enemyDefense = 2
-var enemyStunHP = 3
-var enemyMaxStunHP = 3
+var enemyStunHP = 9
+var enemyMaxStunHP = 9
